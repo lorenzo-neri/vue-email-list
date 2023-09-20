@@ -18,7 +18,8 @@ createApp({
     data() {
         return {
             mailsArray: [],
-            mail: ''
+            mail: '',
+            counterMail: 0 //ci servirà come contatore
         }
     },
 
@@ -37,9 +38,11 @@ createApp({
                     console.log(this.mail);
 
                     console.log(this.mailsArray);
-                    
+
                     //pusho le mail
-                    this.mailsArray.push(this.mail)
+                    this.mailsArray.push(this.mail);
+
+                    this.counterMail++
                 })
         }
 

@@ -9,7 +9,7 @@
     <body>
 
         <div id="app">
-            <ol>
+            <ol v-if="counterMail == 10">
                 <li v-for="mail in mailsArray">
                     {{mail}}
                 </li>
