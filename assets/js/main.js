@@ -19,7 +19,7 @@ createApp({
         return {
             mailsArray: [],
             mail: '',
-            counterMail: 0 //ci servirà come contatore
+            //counterMail: 0 //ci servirà come contatore (soluzione utilizzata prima di mettere .length)
         }
     },
 
@@ -42,7 +42,7 @@ createApp({
                     //pusho le mail
                     this.mailsArray.push(this.mail);
 
-                    this.counterMail++
+                    //this.counterMail++
                 })
         }
 
