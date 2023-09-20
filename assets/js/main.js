@@ -17,22 +17,31 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            answer: ''
+            mailsArray: [],
+            mail: ''
         }
     },
-
 
     mounted() {
         console.log('caricata');
 
-        axios
-        .get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then(response =>{
-            console.log(response);
 
-            this.mail = response.data.response;
-            console.log(this.mail);
-        })        
+        for (let i = 0; i < 10; i++) {
+
+            axios
+                .get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then(response => {
+                    console.log(response);
+
+                    this.mail = response.data.response;
+                    console.log(this.mail);
+
+                    console.log(this.mailsArray);
+                    
+                    //pusho le mail
+                    this.mailsArray.push(this.mail)
+                })
+        }
 
 
     }
