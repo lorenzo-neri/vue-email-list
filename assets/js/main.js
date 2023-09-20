@@ -23,8 +23,16 @@ createApp({
 
 
     mounted() {
+        console.log('caricata');
 
-        
+        axios
+        .get('https://flynn.boolean.careers/exercises/api/random/mail')
+        .then(response =>{
+            console.log(response);
+
+            this.mail = response.data.response;
+            console.log(this.mail);
+        })        
 
 
     }
